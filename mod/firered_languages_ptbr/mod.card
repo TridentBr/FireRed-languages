@@ -1,0 +1,12 @@
+return {
+  summary = "Experimental PT-BR translation infrastructure test; no vanilla text changes yet.",
+  author = "TridentBr",
+  tags = { "language", "translation", "pt-br", "experimental" },
+  differences = {
+    changed = {},
+    added = { "One isolated text registry entry for API verification" },
+    known = { "Does not translate existing dialogue or add an in-game language menu" },
+  },
+  credits = { { who = "Gen1Recomp contributors", for_ = "mod API and documentation" } },
+  compat = { engine = ">=0.0.0 <2.0.0", modApi = 3 },
+}

@@ -1,0 +1,17 @@
+{
+  "id": "firered_languages_ptbr",
+  "name": "FireRed Languages - Brazilian Portuguese (Experimental)",
+  "version": "0.1.0",
+  "api": 3,
+  "entry": "main.lua",
+  "profile": "content",
+  "category": "LANGUAGE",
+  "language": true,
+  "games": ["firered"],
+  "priority": 100,
+  "dependencies": [],
+  "optional_dependencies": [],
+  "conflicts": [],
+  "description": "Experimental Brazilian Portuguese language registry smoke test. Does not yet translate vanilla game dialogue.",
+  "github": "TridentBr/FireRed-languages"
+}
