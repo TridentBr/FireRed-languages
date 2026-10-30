@@ -1,0 +1,11 @@
+return {
+  summary = "Diagnostic test for two FireRed PC text overrides.",
+  author = "TridentBr",
+  tags = { "language", "pt-br", "firered", "diagnostic" },
+  differences = {
+    changed = { "Text_BootedUpPC and Text_AccessWhichPC diagnostic markers" },
+    added = {},
+    known = { "Experimental: translation application is not yet validated on Android." },
+  },
+  compat = { engine = ">=0.0.0 <2.0.0", modApi = 3 },
+}

@@ -1,0 +1,19 @@
+{
+  "id": "firered_languages_ptbr",
+  "name": "FireRed Languages - PT-BR (Diagnostic)",
+  "version": "0.3.0",
+  "api": 3,
+  "entry": "main.lua",
+  "profile": "content",
+  "category": "LANGUAGE",
+  "language": true,
+  "games": [
+    "firered"
+  ],
+  "priority": 100,
+  "dependencies": [],
+  "optional_dependencies": [],
+  "conflicts": [],
+  "description": "Diagnostic: overrides two consecutive FireRed PC dialogue strings.",
+  "github": "TridentBr/FireRed-languages"
+}
