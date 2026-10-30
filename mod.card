@@ -1,11 +1,12 @@
 return {
-  summary = "Diagnostic test for two FireRed PC text overrides.",
+  summary = "PT-BR engine-string vs Gen3-script diagnostic; not a complete translation.",
   author = "TridentBr",
-  tags = { "language", "pt-br", "firered", "diagnostic" },
+  tags = { "language", "translation", "pt-br", "experimental" },
   differences = {
-    changed = { "Text_BootedUpPC and Text_AccessWhichPC diagnostic markers" },
-    added = {},
-    known = { "Experimental: translation application is not yet validated on Android." },
+    changed = { "Two engine string overrides", "Two FireRed PC dialogue overrides" },
+    added = { "Separate language catalogs and loading diagnostics" },
+    known = { "Gen3 dialogue registry may not be ready at mod load", "Not a complete localization" },
   },
+  credits = { { who = "Gen1Recomp contributors", for_ = "mod API" } },
   compat = { engine = ">=0.0.0 <2.0.0", modApi = 3 },
 }

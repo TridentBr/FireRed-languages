@@ -1,25 +1,27 @@
-# FireRed Languages - PT-BR Diagnostic v0.3.0
+# FireRed Languages PT-BR — Diagnostic v0.4.0
 
-Experimental, AI-assisted mod. Back up your save before testing. No ROM is included.
+This experimental mod compares two official Gen1Recomp API 3 translation surfaces:
 
-## Goal
+- `mod.content.strings:override` for English-source engine UI strings.
+- `mod.content.text:override` for FireRed extracted script labels.
 
-Distinguish a successfully loaded mod from text overrides actually being applied in FireRed. This mod attempts to replace two **existing** text labels:
+The catalogs are loaded with `mod:read`, matching the safe file-loading pattern used by VersãoVermelha. This package does not copy its Gen1 dialogue or invasive engine patches.
 
-- `Text_BootedUpPC` -> `TESTE PTBR 03: PC LIGADO!`
-- `Text_AccessWhichPC` -> `TESTE PTBR 03: QUAL PC?`
+## Android test
 
-The distinctive prefix is intentional and is not a final translation. The test uses ASCII-only text to avoid mixing font issues into the diagnosis. Other game text will remain in English.
+1. Back up your save. Disable prior versions of this mod.
+2. Import this package and confirm version `0.4.0` and `ENABLED`.
+3. Fully restart Gen1Recomp.
+4. At the PC in the player's bedroom, look for `TESTE PTBR 04`.
+5. In the in-game Save menu while in Pallet Town, check whether the location is `CIDADE DE PALLET`. The location test only applies where the UI uses `Strings` for the English source `PALLET TOWN`.
+6. If available, check the game's `RETURN TO MAIN MENU?` prompt for `VOLTAR AO MENU PRINCIPAL?` (do not confirm exit unless desired).
 
-## Android procedure
+## Interpretation
 
-1. Back up the save.
-2. Disable/remove v0.2.0 and install this v0.3.0 ZIP, avoiding duplicate mod IDs.
-3. Confirm the manager shows version 0.3.0 and ENABLED.
-4. Fully close and relaunch the game, then load FireRed.
-5. Interact with a PC. Report the **exact** first and second messages.
-6. If both remain English, collect the app build/commit and report that neither override was applied. The manager's ENABLED label alone does not prove the Lua entry ran.
+- Engine strings change but PC dialogue does not: the mod entrypoint and `strings` path work; investigate Gen3 text bundle initialization.
+- Both change: both translation surfaces work.
+- Neither changes: investigate entrypoint execution, source key usage, manifest selection, or Android build compatibility.
 
-## Technical note
+This is not proof of a specific upstream defect. Run upstream modkit validation and engine tests before releasing.
 
-The official engine fixture `tests/fixture_data/game3_pc_scripts.lua` connects `EventScript_PC` to `Text_BootedUpPC` and includes `Text_AccessWhichPC`. The official Gen 3 API documents the `text` registry, but this test has not been executed on Android or run through upstream modkit.
+All source, docs and comments are in English; player-facing text is in Portuguese.
